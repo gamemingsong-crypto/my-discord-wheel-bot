@@ -19,7 +19,10 @@ import { UplupAPI } from './uplup-api.js';
 // Import commands
 import * as spinCommand from './commands/spin.js';
 import * as wheelCommand from './commands/wheel.js';
-
+import express from 'express';
+const app = express();
+app.get('/', (req, res) => res.send('Bot is Alive!'));
+app.listen(process.env.PORT || 3000);
 // Validate environment variables
 const requiredEnvVars = ['DISCORD_TOKEN', 'DISCORD_CLIENT_ID'];
 for (const envVar of requiredEnvVars) {
